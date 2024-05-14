@@ -1,0 +1,88 @@
+### Hämta alla användare
+GET http://localhost:5200/api/users
+
+
+### Lägg till användare
+POST http://localhost:5200/api/users/register
+Content-Type: application/json
+
+{
+    "username": "fuck",
+    "password": "allt suger"
+}
+
+### Logga in användare
+
+POST http://localhost:5200/api/users/login
+Content-Type: application/json
+
+{
+    "username": "elsabonde",
+    "password": "ri"
+}
+
+### Logga ut användare
+
+POST http://localhost:5200/api/users/logout
+
+### Kontrollera om användare är inloggad
+
+GET http://localhost:5200/api/users/auth
+
+### Uppdatera uppgifter
+PUT http://localhost:5200/api/users/662f8ff4bec011edfdae362f
+Content-Type: application/json
+
+{
+    "username": "eLSA",
+    "password": "olivia654"
+}
+
+### Hämta alla posts
+
+GET http://localhost:5200/api/posts
+
+### Hämta en specifik post
+
+GET http://localhost:5200/api/posts/663ca8e241c7941b2818de97
+
+### Skapa ny post
+
+POST http://localhost:5200/api/posts/
+Content-Type: application/json
+
+{
+    "author": "elsi",
+    "title": "dreams",
+    "content": "Dreamed once of having this skin. It was a nightmare.",
+    "listedPrice": 936,
+    "image": "663a30e16bb60a0089872a24"
+}
+
+### Uppdatera post
+
+PUT http://localhost:5200/api/posts/663cc8d2a33c7e308b081ed2
+Content-Type: application/json
+
+{
+    "title": "jag är en hora",
+    "content": "Drömde inatt att jag var en hund som grävde ett jättedjupt hål. Det var spännande och jag blev trött i tassarna. Jag vaknade och var en katt igen."
+}
+
+### Ta bort post
+DELETE http://localhost:5200/api/posts/662a6770a5492055b8c72eb6
+
+### Lägg till bild
+
+POST http://localhost:5200/api/images
+Content-Type: multipart/form-data; boundary=FormRow
+
+--FormRow
+Content-Disposition: form-data; name="image"; filename="art55.jpg"
+Content-Type: image/jpeg
+
+< ./art55.jpg
+--FormRow--
+
+### Hämta en bild
+GET http://localhost:5200/api/images/6638fe128fbcd4222f22e553
